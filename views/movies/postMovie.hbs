@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> head}}
+</head>
+<body>
+<div class="container">
+
+    {{> navbar}}
+
+    <div class="row">
+
+        <!-- Form  -->
+        <br>
+        <div class="col-md-12">
+
+            <form action="/movies/post" method="POST" class="form-horizontal" id="form-edit-movie">
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Añadir pelicula</legend>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movie[title]">Título</label>
+                        <div class="col-md-4">
+                            <input id="movie[title]" name="movie[title]" type="text" placeholder="titulo" class="form-control input-md">
+                            <span class="help-block">Titulo completo de la pelicula</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movie[year]">Año</label>
+                        <div class="col-md-4">
+                            <input id="movie[year]" name="movie[year]" class="form-control" placeholder="1995" class="form-control input-md">
+                            <p class="help-block">Año de estreno</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movie[imdb]">IMDb</label>
+                        <div class="col-md-4">
+                            <input id="movie[imdb]" name="movie[imdb]" class="form-control" placeholder="IMDb" class="form-control input-md">
+                            <p class="help-block">Identificador IMDb</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movie[type]">Tipo</label>
+                        <div class="col-md-4">
+                            <input id="movie[type]" name="movie[type]" class="form-control" placeholder="tipo" class="form-control input-md">
+                            <p class="help-block">Tipo de pelicula</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="btn-save"></label>
+                        <div class="col-md-4">
+                            <button id="btn-save" class="btn btn-success">Guardar</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+
+        </div>
+        <br>
+
+    </div>
+</div>
+
+{{> scripts}}
+
+</body>
+</html>

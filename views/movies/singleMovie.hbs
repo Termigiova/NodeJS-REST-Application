@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> head}}
+</head>
+<body>
+<div class="container">
+
+    {{> navbar}}
+
+    <div class="row">
+
+        <!-- View -->
+        <div class="col-md-12">
+
+            <legend>Pelicula</legend>
+
+            <div >
+
+                <div class2=" col-md-9 col-lg-9 ">
+                    <table class="table table-user-information">
+                        <tbody>
+                        <tr>
+                            <td>Titulo:</td>
+                            <td>{{movie.title}}</td>
+                        </tr>
+                        <tr>
+                            <td>Año:</td>
+                            <td>{{movie.year}}</td>
+                        </tr>
+                        <tr>
+                            <td>IMDb:</td>
+                            <td>{{movie.imdb}}</td>
+                        </tr>
+                        <tr>
+                            <td>Tipo:</td>
+                            <td>{{movie.type}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
+        {{> footer}}
+    </div>
+</div>
+
+{{> scripts}}
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "test": {
+    "PORT": 8084,
+    "REST_API_URI": "http://localhost:8080"
+  },
+  "development": {
+    "PORT": 8084,
+    "REST_API_URI": "http://localhost:8080"
+  }
+}
