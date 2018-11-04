@@ -10,6 +10,14 @@
 
     <div class="row">
 
+        <div class="btn-group">
+            <a id="btn-create" class="btn btn-success" href="/reviews/post">Crear Reseña</a>
+        </div>
+
+    </div>
+
+    <div class="row">
+
         <!-- List -->
         <br>
         <div class=col-md-12>
@@ -20,7 +28,6 @@
                 <table class="table table-bordered table-condensed table-hover">
                     <thead>
                     <tr>
-                        <td>ID</td>
                         <th>Puntaje</th>
                         <th>Fecha</th>
                         <th>Critico</th>
@@ -30,17 +37,16 @@
 
                     </thead>
                     <tbody id="form-list-reviews-body">
-                    {{#each movie}}
+                    {{#each review}}
                         <tr>
-                            <td>{{id}}</td>
                             <td>{{rating}}</td>
                             <td>{{date}}</td>
                             <td>{{reviewer}}</td>
                             <td>{{text}}</td>
                             <td>
-                                <a title="view" class="btn btn-default btn-sm " href="show/{{id}}"> <i class="glyphicon glyphicon-eye-open text-primary"></i> </a>
-                                <a title="edit" class="btn btn-default btn-sm " href="update/{{id}}"> <i class="glyphicon glyphicon-edit text-primary"></i> </a>
-                                <a title="delete" class="btn btn-default btn-sm" href="delete/{{id}}"> <i class="glyphicon glyphicon-trash text-danger"></i> </a>
+                                <a title="view" class="btn btn-default btn-sm " href="/reviews/show/{{id}}"> <i class="glyphicon glyphicon-eye-open text-primary"></i> </a>
+                                <a title="edit" class="btn btn-default btn-sm " href="/reviews/update/{{id}}"> <i class="glyphicon glyphicon-edit text-primary"></i> </a>
+                                <a title="delete" class="btn btn-default btn-sm" href="/reviews/delete/{{id}}"> <i class="glyphicon glyphicon-trash text-danger"></i> </a>
                             </td>
                         </tr>
                     {{/each}}
