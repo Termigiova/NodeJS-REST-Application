@@ -70,11 +70,28 @@
                         </tr>
                         <tr>
                             <td>IMDb:</td>
-                            <td>{{movie.imdb}}</td>
+                            <td>
+                                <ul>
+                                    <li>Rating: {{movie.imdb.rating}}</li>
+                                    <li>Votes: {{movie.imdb.votes}}</li>
+                                </ul>
+                            </td>
                         </tr>
                         <tr>
                             <td>Tomato:</td>
-                            <td>{{movie.tomato}}</td>
+                            <td>
+                                <ul>
+                                    <li>Meter: {{movie.tomato.meter}}</li>
+                                    <li>Consensus: {{movie.tomato.consensus}}</li>
+                                    <li>Image: {{movie.tomato.image}}</li>
+                                    <li>Rating: {{movie.tomato.rating}}</li>
+                                    <li>Reviews: {{movie.tomato.reviews}}</li>
+                                    <li>Fresh: {{movie.tomato.fresh}}</li>
+                                    <li>User meter: {{movie.tomato.userMeter}}</li>
+                                    <li>User Rating: {{movie.tomato.userRating}}</li>
+                                    <li>User Reviews: {{movie.tomato.userReviews}}</li>
+                                </ul>
+                            </td>
                         </tr>
                         <tr>
                             <td>Metacritic:</td>
@@ -82,7 +99,13 @@
                         </tr>
                         <tr>
                             <td>Premios:</td>
-                            <td>{{movie.awards}}</td>
+                            <td>
+                                <ul>
+                                    <li>Nominations: {{movie.awards.nominations}}</li>
+                                    <li>Wins: {{movie.awards.wins}}</li>
+                                    <li>Text: {{movie.awards.text}}</li>
+                                </ul>
+                            </td>
                         </tr>
                         <tr>
                             <td>Tipo:</td>
@@ -93,8 +116,8 @@
                 </div>
 
                 <div class="btn-group">
-                    <a id="btn-update" class="btn btn-success" href="update/{{id}}">Actualizar</a>
-                    <a id="btn-delete" class="btn btn-success" href="delete/{{id}}">Eliminar</a>
+                    <a id="btn-update" class="btn btn-success" href="/movieDetails/update/{{movie.id}}">Actualizar</a>
+                    <a id="btn-delete" class="btn btn-success" href="/movieDetails/delete/{{movie.id}}">Eliminar</a>
                 </div>
                 
             </div>

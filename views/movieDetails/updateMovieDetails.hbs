@@ -12,94 +12,115 @@
 
         <div class="col-md-12">
 
-            <legend>Detalles de la película</legend>
+            <legend>Detalles de la pelicula</legend>
 
             <div >
 
                 <div class2=" col-md-9 col-lg-9 ">
                     <table class="table table-user-information">
-                      <tbody>
-                      <tr>
-                          <td>Titulo:</td>
-                          <td>{{movie.title}}</td>
-                      </tr>
-                      <tr>
-                          <td>Año:</td>
-                          <td>{{movie.year}}</td>
-                      </tr>
-                      <tr>
-                          <td>Clasificacion:</td>
-                          <td>{{movie.rated}}</td>
-                      </tr>
-                      <tr>
-                          <td>Estreno:</td>
-                          <td>{{movie.released}}</td>
-                      </tr>
-                      <tr>
-                          <td>Duracion:</td>
-                          <td>{{movie.runtime}}</td>
-                      </tr>
-                      <tr>
-                          <td>Paises:</td>
-                          <td>{{movie.countries}}</td>
-                      </tr>
-                      <tr>
-                          <td>Generos:</td>
-                          <td>{{movie.genres}}</td>
-                      </tr>
-                      <tr>
-                          <td>Director:</td>
-                          <td>{{movie.director}}</td>
-                      </tr>
-                      <tr>
-                          <td>Escritores:</td>
-                          <td>{{movie.writers}}</td>
-                      </tr>
-                      <tr>
-                          <td>Actores:</td>
-                          <td>{{movie.actors}}</td>
-                      </tr>
-                      <tr>
-                          <td>Trama:</td>
-                          <td>{{movie.plot}}</td>
-                      </tr>
-                      <tr>
-                          <td>Poster:</td>
-                          <td>{{movie.poster}}</td>
-                      </tr>
-                      <tr>
-                          <td>IMDb:</td>
-                          <td>{{movie.imdb}}</td>
-                      </tr>
-                      <tr>
-                          <td>Tomato:</td>
-                          <td>{{movie.tomato}}</td>
-                      </tr>
-                      <tr>
-                          <td>Metacritic:</td>
-                          <td>{{movie.metacritic}}</td>
-                      </tr>
-                      <tr>
-                          <td>Premios:</td>
-                          <td>{{movie.awards}}</td>
-                      </tr>
-                      <tr>
-                          <td>Tipo:</td>
-                          <td>{{movie.type}}</td>
-                      </tr>
-                      </tbody>
+                        <tbody>
+                        <tr>
+                            <td>Titulo:</td>
+                            <td>{{movie.title}}</td>
+                        </tr>
+                        <tr>
+                            <td>Año:</td>
+                            <td>{{movie.year}}</td>
+                        </tr>
+                        <tr>
+                            <td>Clasificacion:</td>
+                            <td>{{movie.rated}}</td>
+                        </tr>
+                        <tr>
+                            <td>Estreno:</td>
+                            <td>{{movie.released}}</td>
+                        </tr>
+                        <tr>
+                            <td>Duracion:</td>
+                            <td>{{movie.runtime}}</td>
+                        </tr>
+                        <tr>
+                            <td>Paises:</td>
+                            <td>{{movie.countries}}</td>
+                        </tr>
+                        <tr>
+                            <td>Generos:</td>
+                            <td>{{movie.genres}}</td>
+                        </tr>
+                        <tr>
+                            <td>Director:</td>
+                            <td>{{movie.director}}</td>
+                        </tr>
+                        <tr>
+                            <td>Escritores:</td>
+                            <td>{{movie.writers}}</td>
+                        </tr>
+                        <tr>
+                            <td>Actores:</td>
+                            <td>{{movie.actors}}</td>
+                        </tr>
+                        <tr>
+                            <td>Trama:</td>
+                            <td>{{movie.plot}}</td>
+                        </tr>
+                        <tr>
+                            <td>Poster:</td>
+                            <td>{{movie.poster}}</td>
+                        </tr>
+                        <tr>
+                            <td>IMDb:</td>
+                            <td>
+                                <ul>
+                                    <li>Rating: {{movie.imdb.rating}}</li>
+                                    <li>Votes: {{movie.imdb.votes}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Tomato:</td>
+                            <td>
+                                <ul>
+                                    <li>Meter: {{movie.tomato.meter}}</li>
+                                    <li>Consensus: {{movie.tomato.consensus}}</li>
+                                    <li>Image: {{movie.tomato.image}}</li>
+                                    <li>Rating: {{movie.tomato.rating}}</li>
+                                    <li>Reviews: {{movie.tomato.reviews}}</li>
+                                    <li>Fresh: {{movie.tomato.fresh}}</li>
+                                    <li>User meter: {{movie.tomato.userMeter}}</li>
+                                    <li>User Rating: {{movie.tomato.userRating}}</li>
+                                    <li>User Reviews: {{movie.tomato.userReviews}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Metacritic:</td>
+                            <td>{{movie.metacritic}}</td>
+                        </tr>
+                        <tr>
+                            <td>Premios:</td>
+                            <td>
+                                <ul>
+                                    <li>Nominations: {{movie.awards.nominations}}</li>
+                                    <li>Wins: {{movie.awards.wins}}</li>
+                                    <li>Text: {{movie.awards.text}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Tipo:</td>
+                            <td>{{movie.type}}</td>
+                        </tr>
+                        </tbody>
                     </table>
                 </div>
 
             </div>
 
-        </div>
-
         <!-- Form  -->
         <br>
         <div class="col-md-12">
 
-            <form action="/movieDetails/update/{{movieDetails.id}}" method="POST" class="form-horizontal" id="form-edit-movieDetails">
+            <form action="/movieDetails/update/{{movie.id}}" method="POST" class="form-horizontal" id="form-edit-movieDetails">
                 <fieldset>
 
                     <!-- Form Name -->
@@ -191,16 +212,79 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="movieDetails[imdb]">IMDb</label>
+                        <label class="col-md-4 control-label" for="movieDetails[imdb][rating]">IMDB | Rating</label>
                         <div class="col-md-4">
-                            <input id="movieDetails[imdb]" name="movieDetails[imdb]" type="text" class="form-control input-md">
+                            <input id="movieDetails[imdb][rating]" name="movieDetails[imdb][rating]" type="text" class="form-control input-md">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="movieDetails[tomato]">Tomato</label>
+                        <label class="col-md-4 control-label" for="movieDetails[imdb][votes]">IMDB | Votes</label>
                         <div class="col-md-4">
-                            <input id="movieDetails[tomato]" name="movieDetails[tomato]" class="form-control" class="form-control input-md">
+                            <input id="movieDetails[imdb][votes]" name="movieDetails[imdb][votes]" type="text" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[tomato][meter]">Tomato | Meter</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[tomato][meter]" name="movieDetails[tomato][meter]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[tomato][consensus]">Tomato | Consensus</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[tomato][consensus]" name="movieDetails[tomato][consensus]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[tomato][image]">Tomato | Image</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[tomato][image]" name="movieDetails[tomato][image]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[tomato][rating]">Tomato | Rating</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[tomato][rating]" name="movieDetails[tomato][rating]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[tomato][reviews]">Tomato | Reviews</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[tomato][reviews]" name="movieDetails[tomato][reviews]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[tomato][fresh]">Tomato | Fresh</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[tomato][fresh]" name="movieDetails[tomato][fresh]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[tomato][userMeter]">Tomato | User Meter</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[tomato][userMeter]" name="movieDetails[tomato][userMeter]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[tomato][userRating]">Tomato | User Rating</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[tomato][userRating]" name="movieDetails[tomato][userRating]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[tomato][userReviews]">Tomato | User Reviews</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[tomato][userReviews]" name="movieDetails[tomato][userReviews]" class="form-control" class="form-control input-md">
                         </div>
                     </div>
 
@@ -212,9 +296,23 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="movieDetails[awards]">Premios</label>
+                        <label class="col-md-4 control-label" for="movieDetails[awards][nominations]">Premios | Nominations</label>
                         <div class="col-md-4">
-                            <input id="movieDetails[awards]" name="movieDetails[awards]" class="form-control" class="form-control input-md">
+                            <input id="movieDetails[awards][nominations]" name="movieDetails[awards][nominations]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[awards][wins]">Premios | Wins</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[awards][wins]" name="movieDetails[awards][wins]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[awards][text]">Premios | Text</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[awards][text]" name="movieDetails[awards][text]" class="form-control" class="form-control input-md">
                         </div>
                     </div>
 
