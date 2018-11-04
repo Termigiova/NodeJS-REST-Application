@@ -1,12 +1,12 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Video</a>
+      <a class="navbar-brand" href="/">Video</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#views/movies/allMovies.hbs">Movies</a></li>
-      <li><a href="#views/movieDetails/allMovieDetails.hbs">MovieDetails</a></li>
-      <li><a href="#views/reviews/allReviews.hbs">Reviews</a></li>
+      <li class="{{navbarMoviesActive}}"><a href="/movies">Movies</a></li>
+      <li class="{{navbarMovieDetailsActive}}"><a href="/movieDetails">MovieDetails</a></li>
+      <li class="{{navbarReviewsActive}}"><a href="/reviews">Reviews</a></li>
     </ul>
   </div>
 </nav>
