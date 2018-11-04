@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> head}}
+</head>
+<body>
+<div class="container">
+
+    {{> navbar}}
+
+    <div class="row">
+
+        <!-- List -->
+        <br>
+        <div class=col-md-12>
+
+            <form id="form-list-movie">
+                <legend>Detalles de peliculas</legend>
+
+                <table class="table table-bordered table-condensed table-hover">
+                    <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Titulo</td>
+                        <th>Acciones</th>
+                    </tr>
+
+                    </thead>
+                    <tbody id="form-list-movie-body">
+                    {{#each movie}}
+                        <tr>
+                            <td>{{id}}</td>
+                            <td>{{title}}</td>
+                            <td>
+                                <a title="view" class="btn btn-default btn-sm " href="show/{{id}}"> <i class="glyphicon glyphicon-eye-open text-primary"></i> </a>
+                                <a title="edit" class="btn btn-default btn-sm " href="update/{{id}}"> <i class="glyphicon glyphicon-edit text-primary"></i> </a>
+                                <a title="delete" class="btn btn-default btn-sm" href="delete/{{id}}"> <i class="glyphicon glyphicon-trash text-danger"></i> </a>
+                            </td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+{{> scripts}}
+
+</body>
+</html>

@@ -1,22 +1,32 @@
+// Config files
+
 require('./config/config');
+
+// Module dependencies
 
 const express = require('express');
 const bodyParser = require('body-parser');
 const hbs = require('hbs');
-const request = require('request');
+
 
 const app = express();
 const port = process.env.PORT;
-const REST_API_URI = process.env.REST_API_URI;
+const movies = require('./modules/movies');
+const reviews = require('./modules/reviews');
+
+// Config
 
 hbs.registerPartials(__dirname + '/../views/partials');
 app.set('view engine', 'hbs');
+app.set('views', __dirname + './../views');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 hbs.registerHelper('getCurrentYear', () => {
     return new Date().getFullYear();
 });
+
+// General
 
 app.get('/', (req, res) => {
 
@@ -27,110 +37,32 @@ app.get('/', (req, res) => {
 
 });
 
-app.get('/movies', (req, res) => {
+// Movies
 
-    request(`${REST_API_URI}/movies`, { json: true }, (error, response, body) => {
-        if (error) { res.render('error.hbs'); }
-        res.render('movies/allMovies.hbs', {
-            pageTitle: "Películas",
-            movie: body
-        });
-    });
+app.get('/movies', movies.showAll);
+app.get('/movies/show/:id', movies.show);
 
-});
+app.get('/movies/update/:id', movies.showUpdate);
+app.post('/movies/update/:id', movies.update);
 
-app.get('/movies/show/:id', (req, res) => {
+app.get('/movies/post', movies.showPost);
+app.post('/movies/post', movies.post);
 
-    let id = req.params.id;
+app.get('/movies/delete/:id', movies.delete);
 
-    request(`${REST_API_URI}/movies/${id}`, { json: true }, (error, response, body) => {
-        if (error) { res.render('error.hbs'); }
-        res.render('movies/singleMovie.hbs', {
-            pageTitle: "Película",
-            movie: body
-        });
-    });
+// Reviews
 
-});
+app.get('/reviews', reviews.showAll);
+app.get('/reviews/show/:id', reviews.show);
 
-app.get('/movies/update/:id', (req, res) => {
+app.get('/reviews/update/:id', reviews.showUpdate);
+app.post('/reviews/update/:id', reviews.update);
 
-    let id = req.params.id;
+app.get('/reviews/post', reviews.showPost);
+app.post('/reviews/post', reviews.post);
 
-    request(`${REST_API_URI}/movies/${id}`, { json: true }, (error, response, body) => {
-        if (error) { res.render('error.hbs'); }
-        res.render('movies/updateMovie.hbs', {
-            pageTitle: "Actualizar película",
-            movie: body
-        });
-    });
+app.get('/reviews/delete/:id', reviews.delete);
 
-});
-
-app.post('/movies/update/:id',(req, res) => {
-
-    let id = req.params.id;
-
-    let title = req.body.movie.title;
-    let year = req.body.movie.year;
-    let imdb = req.body.movie.imdb;
-    let type = req.body.movie.type;
-
-    let formData = {
-        title: title,
-        year: year,
-        imdb: imdb,
-        type: type
-    };
-
-    request.put({
-        url: `${REST_API_URI}/movies/${id}`,
-        json: formData,
-    }, (error, response, body) => {
-        if (error) { res.render('error.hbs'); }
-
-        res.render('movies/singleMovie.hbs', {
-            pageTitle: "Película Actualizada",
-            movie: body
-        });
-
-    });
-
-});
-
-app.get('/movies/post', (req, res) => {
-
-    res.render('movies/postMovie.hbs', {
-        pageTitle: "Crear película"
-    });
-
-});
-
-app.post('/movies/post', (req, res) => {
-
-    let title = req.body.movie.title;
-    let year = req.body.movie.year;
-    let imdb = req.body.movie.imdb;
-    let type = req.body.movie.type;
-
-    let formData = {
-        title: title,
-        year: year,
-        imdb: imdb,
-        type: type
-    };
-
-    request.post({
-        url: `${REST_API_URI}/movies`,
-        json: formData,
-    }, (error, response, id) => {
-        if (error) { res.render('error.hbs'); }
-
-        res.redirect(`/movies/show/${id}`);
-
-    });
-
-});
 
 app.listen(port, () => {
     console.log(`Started on port ${port}`);

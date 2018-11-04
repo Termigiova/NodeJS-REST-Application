@@ -10,6 +10,14 @@
 
     <div class="row">
 
+        <div class="btn-group">
+            <a id="btn-create" class="btn btn-success" href="/movies/post">Crear Película</a>
+        </div>
+
+    </div>
+
+    <div class="row">
+
         <!-- List -->
         <br>
         <div class=col-md-12>
@@ -36,9 +44,9 @@
                             <td>{{imdb}}</td>
                             <td>{{type}}</td>
                             <td>
-                                <a title="view" class="btn btn-default btn-sm " href="show/{{id}}"> <i class="glyphicon glyphicon-eye-open text-primary"></i> </a>
-                                <a title="edit" class="btn btn-default btn-sm " href="updateMovie/{{id}}"> <i class="glyphicon glyphicon-edit text-primary"></i> </a>
-                                <a title="delete" class="btn btn-default btn-sm" href="deleteMovie/{{id}}"> <i class="glyphicon glyphicon-trash text-danger"></i> </a>
+                                <a title="view" class="btn btn-default btn-sm " href="/movies/show/{{id}}"> <i class="glyphicon glyphicon-eye-open text-primary"></i> </a>
+                                <a title="edit" class="btn btn-default btn-sm " href="/movies/update/{{id}}"> <i class="glyphicon glyphicon-edit text-primary"></i> </a>
+                                <a title="delete" class="btn btn-default btn-sm" href="/movies/delete/{{id}}"> <i class="glyphicon glyphicon-trash text-danger"></i> </a>
                             </td>
                         </tr>
                     {{/each}}

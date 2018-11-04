@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> head}}
+</head>
+<body>
+<div class="container">
+
+    {{> navbar}}
+
+    <div class="row">
+
+        <!-- Form  -->
+        <br>
+        <div class="col-md-12">
+
+            <form action="/movieDetails/post" method="POST" class="form-horizontal" id="form-post-movieDetails">
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Añadir detalles de pelicula</legend>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[title]">Título</label>
+                        <div class="col-md-4">
+                        <input id="movieDetails[title]" name="movieDetails[title]" type="text" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[year]">Año</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[year]" name="movieDetails[year]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[rated]">Puntaje</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[rated]" name="movieDetails[rated]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[released]">Estreno</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[released]" name="movieDetails[released]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[runtime]">Duración</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[runtime]" name="movieDetails[runtime]" type="text" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[countries]">Paises</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[countries]" name="movieDetails[countries]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[genres]">Géneros</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[genres]" name="movieDetails[genres]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[director]">Director</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[director]" name="movieDetails[director]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[writers]">Escritores</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[writers]" name="movieDetails[writers]" type="text" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[actors]">Actores</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[actors]" name="movieDetails[actors]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[plot]">Trama</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[plot]" name="movieDetails[plot]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[poster]">Poster</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[poster]" name="movieDetails[poster]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[imdb]">IMDb</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[imdb]" name="movieDetails[imdb]" type="text" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[tomato]">Tomato</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[tomato]" name="movieDetails[tomato]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[metacritic]">Metacritic</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[metacritic]" name="movieDetails[metacritic]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[awards]">Premios</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[awards]" name="movieDetails[awards]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="movieDetails[type]">Tipo</label>
+                        <div class="col-md-4">
+                            <input id="movieDetails[type]" name="movieDetails[type]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="btn-save"></label>
+                        <div class="col-md-4">
+                            <button id="btn-save" class="btn btn-success">Guardar</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+
+        </div>
+        <br>
+
+    </div>
+</div>
+
+{{> scripts}}
+
+</body>
+</html>

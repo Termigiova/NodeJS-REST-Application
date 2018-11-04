@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> head}}
+</head>
+<body>
+<div class="container">
+
+    {{> navbar}}
+
+    <div class="row">
+
+        <!-- Form  -->
+        <br>
+        <div class="col-md-12">
+
+            <form action="/reviews/post" method="POST" class="form-horizontal" id="form-post-review">
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Añadir reseña</legend>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="review[rating]">Puntaje</label>
+                        <div class="col-md-4">
+                            <input id="review[rating]" name="review[rating]" type="text"  class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="review[date]">Fecha</label>
+                        <div class="col-md-4">
+                            <input id="review[date]" name="review[date]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="review[reviewer]">Critico</label>
+                        <div class="col-md-4">
+                            <input id="review[reviewer]" name="review[reviewer]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="review[text]">Reseña</label>
+                        <div class="col-md-4">
+                            <input id="review[text]" name="review[text]" class="form-control" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="btn-save"></label>
+                        <div class="col-md-4">
+                            <button id="btn-save" class="btn btn-success">Guardar</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+
+        </div>
+        <br>
+
+    </div>
+</div>
+
+{{> scripts}}
+
+</body>
+</html>

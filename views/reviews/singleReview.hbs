@@ -13,7 +13,7 @@
         <!-- View -->
         <div class="col-md-12">
 
-            <legend>Pelicula</legend>
+            <legend>Reseña</legend>
 
             <div >
 
@@ -21,29 +21,30 @@
                     <table class="table table-user-information">
                         <tbody>
                         <tr>
-                            <td>Titulo:</td>
-                            <td>{{movie.title}}</td>
+                            <td>Puntaje:</td>
+                            <td>{{review.rating}}</td>
                         </tr>
                         <tr>
-                            <td>Año:</td>
-                            <td>{{movie.year}}</td>
+                            <td>Fecha:</td>
+                            <td>{{review.date}}</td>
                         </tr>
                         <tr>
-                            <td>IMDb:</td>
-                            <td>{{movie.imdb}}</td>
+                            <td>Critico:</td>
+                            <td>{{review.reviewer}}</td>
                         </tr>
                         <tr>
-                            <td>Tipo:</td>
-                            <td>{{movie.type}}</td>
+                            <td>Reseña:</td>
+                            <td>{{review.text}}</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
-                
+
                 <div class="btn-group">
-                    <a id="btn-update" class="btn btn-success" href="/movies/update/{{movie.id}}">Actualizar</a>
-                    <a id="btn-delete" class="btn btn-danger" href="/movies/delete/{{movie.id}}">Eliminar</a>
+                    <a id="btn-update" class="btn btn-success" href="/reviews/update/{{review.id}}">Actualizar</a>
+                    <a id="btn-delete" class="btn btn-success" href="/reviews/delete/{{review.id}}">Eliminar</a>
                 </div>
+
             </div>
 
         </div>
