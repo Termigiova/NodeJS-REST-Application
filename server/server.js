@@ -12,6 +12,7 @@ const hbs = require('hbs');
 const app = express();
 const port = process.env.PORT;
 const movies = require('./modules/movies');
+const movieDetails = require('./modules/movieDetails');
 const reviews = require('./modules/reviews');
 
 // Config
@@ -49,6 +50,19 @@ app.get('/movies/post', movies.showPost);
 app.post('/movies/post', movies.post);
 
 app.get('/movies/delete/:id', movies.delete);
+
+// Movie Details
+
+app.get('/movieDetails', movieDetails.showAll);
+app.get('/movieDetails/show/:id', movieDetails.show);
+
+app.get('/movieDetails/update/:id', movieDetails.showUpdate);
+app.post('/movieDetails/update/:id', movieDetails.update);
+
+app.get('/movieDetails/post', movieDetails.showPost);
+app.post('/movieDetails/post', movieDetails.post);
+
+app.get('/movieDetails/delete/:id', movieDetails.delete);
 
 // Reviews
 
